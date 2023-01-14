@@ -39,3 +39,34 @@ describe("constructor", () => {
   });
 
 
+
+describe("constructor", () => {
+    // ...
+    it("increments by 5", () => {
+      const character = new Character("Mametchi");
+  
+      character.growUp();
+  
+      expect(character.hunger).toEqual(5);
+    });
+  });
+
+
+
+describe("constructor", () => {
+    // ...
+    it("Decreases by 3", () => {
+      const character = new Character("Mametchi");
+  
+      character.growUp();
+  
+      expect(character.fitness).toEqual(7);
+    });
+  });
+
+
+
+
+  
+
+
