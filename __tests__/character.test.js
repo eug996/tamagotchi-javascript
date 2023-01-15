@@ -55,6 +55,32 @@ describe("constructor", () => {
 
 describe("constructor", () => {
     // ...
+    it("increase by 4", () => {
+      const character = new Character("Mametchi");
+  
+      character.walk();
+  
+      expect(character.fitness).toEqual(10);
+    });
+  });
+
+  describe("constructor", () => {
+    // ...
+    it("reduce hunger by 3", () => {
+      const character = new Character("Mametchi");
+  
+      character.feed();
+  
+      expect(character.hunger).toEqual(0);
+    });
+  });
+
+
+
+
+
+  describe("constructor", () => {
+    // ...
     it("Decreases by 3", () => {
       const character = new Character("Mametchi");
   
@@ -63,9 +89,7 @@ describe("constructor", () => {
       expect(character.fitness).toEqual(7);
     });
   });
-
-
-
+ 
 
   
 
