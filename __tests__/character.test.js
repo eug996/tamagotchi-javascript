@@ -76,9 +76,6 @@ describe("constructor", () => {
   });
 
 
-
-
-
   describe("constructor", () => {
     // ...
     it("Decreases by 3", () => {
@@ -89,6 +86,31 @@ describe("constructor", () => {
       expect(character.fitness).toEqual(7);
     });
   });
+
+  describe("constructor", () => {
+    // ...
+    it("Step 7", () => {
+      const character = new Character("Mametchi");
+  
+      character.checkUp();
+  
+      expect(character.fitness).toTruthy
+    });
+  });
+
+  describe("constructor", () => {
+    // ...
+    it("Boolean", () => {
+      const character = new Character("Mametchi");
+  
+      character.isAlive();
+  
+      expect(character.isAlive).toBeTruthy
+    });
+    });
+ 
+ 
+
  
 
   

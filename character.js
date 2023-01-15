@@ -24,6 +24,38 @@ function Character(name) {
     this.hunger = Math.max(0, this.hunger -3)
   };  //created character function
 
+  Character.prototype.checkUp = function () {
+    if (this.fitness <=3){
+      return ("I need a walk");
+    }
+    if (this.hunger >=5){
+      return ("I am hungry");
+    }
+    if(this.fitness <=3 && this.hunger >=5){
+      return ("I am hungry AND I need a walk");
+    }
+    else {
+      return ("I feel great");}
+    
+  };  //created character function
+
+  Character.prototype.isAlive = function() {
+    if(this.fitness <=0){
+      return false;
+    }
+    if(this.hunger >= 10){
+      return false;
+    }
+    if(this.age >= 30){
+      return false;
+    }
+    else {
+      return true};
+  }
+
+
+
+
   
 
 
