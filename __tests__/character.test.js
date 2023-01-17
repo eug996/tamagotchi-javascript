@@ -63,8 +63,11 @@ describe("constructor", () => {
       expect(character.fitness).toEqual(10);
     });
   });
+  
+  
 
   describe("constructor", () => {
+
     // ...
     it("reduce hunger by 3", () => {
       const character = new Character("Mametchi");
@@ -94,21 +97,28 @@ describe("constructor", () => {
   
       character.checkUp();
   
-      expect(character.fitness).toTruthy
+      expect(character.checkUp()).toMatch("I feel great");
     });
   });
 
-  describe("constructor", () => {
-    // ...
-    it("Boolean", () => {
-      const character = new Character("Mametchi");
-  
-      character.isAlive();
-  
-      expect(character.isAlive).toBeTruthy
+
+    describe("feed", () => {
+      // ...
+      it("throws an error if the character is not alive", () => {
+        const character = new Character("Mametchi");
+    
+        character.age = 30;
+    
+        expect(() => character.feed()).toThrow("Your character is no longer alive");
+      });
     });
-    });
- 
+    
+  
+    
+  
+
+  
+    
  
 
  

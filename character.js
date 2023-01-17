@@ -6,6 +6,13 @@ function Character(name) {
     this.fitness = 10;
     
   }
+
+  Character.prototype = {
+    get isAlive() {
+      return this.age < 30 && this.hunger < 10 && this.fitness > 0;
+    },
+  };
+  
   
   Character.prototype.growUp = function () {
     this.age += 1;
@@ -19,7 +26,12 @@ function Character(name) {
     this.fitness = Math.min(10, this.fitness +4)
   };  //created character function
 
+  
   Character.prototype.feed = function () {
+    if (!this.isAlive) {
+      throw new Error("Your character is no longer alive");
+    }
+
     this.hunger -= 3;
     this.hunger = Math.max(0, this.hunger -3)
   };  //created character function
@@ -39,19 +51,23 @@ function Character(name) {
     
   };  //created character function
 
-  Character.prototype.isAlive = function() {
-    if(this.fitness <=0){
-      return false;
-    }
-    if(this.hunger >= 10){
-      return false;
-    }
-    if(this.age >= 30){
-      return false;
-    }
-    else {
-      return true};
-  }
+  describe("feed", () => {
+    // ...
+    it("throws an error if the character is not alive", () => {
+      const character = new Character("Mametchi");
+  
+      character.age = 30;
+  
+      expect(() => character.feed()).toThrow("Your character is no longer alive");
+    });
+  });
+  
+
+  
+
+ 
+
+  
 
 
 
